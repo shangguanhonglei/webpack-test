@@ -13,7 +13,7 @@ module.exports = {
   module:{
   	rules:[
   		{
-  			test:/(\.js|\.jsx)$/,
+		  	test:/(\.js|\.jsx)$/,
   			use:{
   				loader:'babel-loader',
   				options:{
@@ -21,9 +21,24 @@ module.exports = {
   						'env','react'
   					]
   				}
-  			},
-  			exclude:/node_modules/
-  		}
+		     },
+			   exclude:/node_modules/
+  		},
+      {
+        test:/\.css$/,
+        use:[
+          {
+            loader:"style-loader"
+          },
+          {
+            loader:"css-loader",
+            options: {
+                modules: true, // 指定启用css modules
+                localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式
+            }
+          }
+        ]
+      }
   	]
   }
 
