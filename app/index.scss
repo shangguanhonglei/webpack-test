@@ -1,0 +1,13 @@
+$color:red;
+$fontSize:14px;
+@mixin box($w,$h,$c){
+	width:$w;
+	height:$h;
+	border-color:$c;
+	border:5px solid;
+}
+.intro{
+	font-size:$fontsize;
+	@include box(10em,10em,blue);
+	color:$color;
+}
