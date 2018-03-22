@@ -10,7 +10,8 @@ module.exports = {
   devServer:{
   	contentBase:'./build',
   	inline:true,
-  	historyApiFallback:true
+  	historyApiFallback:true,
+    hot: true
   },
   module:{
   	rules:[
@@ -55,7 +56,8 @@ module.exports = {
     new webpack.BannerPlugin('版权所有，翻版必究，非商业用途请于作者联系'),
     new HtmlWebpackPlugin({
       template:__dirname+"/app/index.tmpl.html"
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin() //热加载插件
   ]
 
 }
