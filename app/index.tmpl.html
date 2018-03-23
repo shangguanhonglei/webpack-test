@@ -2,10 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Webpack Sample Project</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div id='root'>
+    <div id = 'root'>
+    </div>
+    <!-- 输入date日期数据 -->
+    <div id = 'date'><%= htmlWebpackPlugin.options.date%></div>
+    <div id = 'files'>
+    	<% for(var key in htmlWebpackPlugin.files){ %>
+				<%= key %>:<%= JSON.stringify(htmlWebpackPlugin.files[key])%>
+    	<% } %>
+    </div>
+    <div id = 'options'>
+    	<% for(var key in htmlWebpackPlugin.options){ %>
+				<%= key %>:<%= JSON.stringify(htmlWebpackPlugin.options[key])%>
+    	<% } %>
     </div>
   </body>
 </html>
