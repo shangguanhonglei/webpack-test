@@ -52,10 +52,26 @@ module.exports = {
           },
           {
             loader:"postcss-loader"
-          }/*,
+          }
+        ]
+      },
+      {
+
+        test:/\.scss$/,
+        use:[
+          {
+            loader:"style-loader"
+          },
+          {
+            loader:"css-loader",
+            options: {
+                modules: true, // 指定启用css modules
+                localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式
+            }
+          },
           {
             loader:"sass-loader"
-          }*/
+          }
         ]
       }
   	]

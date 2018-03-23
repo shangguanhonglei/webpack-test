@@ -7,7 +7,7 @@ $fontSize:14px;
 	border:5px solid;
 }
 .intro{
-	font-size:$fontsize;
+	font-size:$fontSize;
 	@include box(10em,10em,blue);
 	color:$color;
 }
