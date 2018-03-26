@@ -5,6 +5,7 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+  <img src="${ require('./images/2.jpg')}" alt="">
     <div id = 'root'>
     </div>
     <!-- 输入date日期数据 -->
@@ -18,6 +19,9 @@
     	<% for(var key in htmlWebpackPlugin.options){ %>
 				<%= key %>:<%= JSON.stringify(htmlWebpackPlugin.options[key])%>
     	<% } %>
+    </div>
+    <div id="layer">
+      
     </div>
   </body>
 </html>

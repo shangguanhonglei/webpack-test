@@ -41,17 +41,17 @@ module.exports = {
         test:/\.css$/,
         use:[
           {
-            loader:"style-loader"
+            loader:"style-loader"//标签中插入class
           },
           {
-            loader:"css-loader",
+            loader:"css-loader",//引入的css模块生效
             options: {
                 modules: true, // 指定启用css modules
                 localIdentName: '[name]__[local]--[hash:base64:5]' // 指定css的类名格式
             }
           },
           {
-            loader:"postcss-loader"
+            loader:"postcss-loader"//添加各个浏览器css前缀
           }
         ]
       },
@@ -73,7 +73,38 @@ module.exports = {
             loader:"sass-loader"
           }
         ]
+      },
+      {
+        test:/\.tpl$/,
+        use:[
+          {
+            loader:"html-loader"
+          }
+        ]
+      },
+      {
+        test:/(\.jpg|\.png)$/i,
+        use:[
+          {
+            loader:"file-loader",
+            options:{
+              name:'[name]-[hash].[ext]',
+              outputPath: '../build/'
+            }
+          }
+        ]
       }
+      /*{
+        test:/(\.jpg|\.png)$/i,
+        use:[
+          {
+            loader:"url-loader",
+            options:{
+              limit: 8192
+            }
+          }
+        ]
+      }*/
   	]
   },
   plugins:[

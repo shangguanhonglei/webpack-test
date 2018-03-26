@@ -10,4 +10,5 @@ $fontSize:14px;
 	font-size:$fontSize;
 	@include box(10em,10em,blue);
 	color:$color;
+	background:url('./images/1.jpg');
 }
