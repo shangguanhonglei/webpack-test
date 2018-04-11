@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set NODE_ENV=development && webpack-dev-server --config ./webpack.config.js --progress",
+    "start": "set NODE_ENV=development && webpack --config ./webpack.config.js --progress",
     "build": "set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress",
     "server": "webpack-dev-server --open"
   },
@@ -31,6 +31,6 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.3"
   }
 }

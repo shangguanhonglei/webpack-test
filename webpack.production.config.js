@@ -114,7 +114,7 @@ module.exports = {
       title:"hello webpack!",
       template:__dirname+"/app/index.tmpl.html",
       date:new Date(),
-      chunks:['main'],
+      chunks:['main'],//注入对应的入口文件
       minify:{
         removeComments:true,//删除注释
         collapseWhitespace:true//删除空格
@@ -142,7 +142,7 @@ module.exports = {
       chunks:['c']
     }),
 
-    new webpack.HotModuleReplacementPlugin(), //热加载插件
+    //new webpack.HotModuleReplacementPlugin(), //热加载插件
     new CleanWebpackPlugin('build/*.*', {
       root: __dirname,
       verbose: true,
