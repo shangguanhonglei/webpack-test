@@ -18,6 +18,7 @@ module.exports = {
   devServer:{
   	contentBase:'./dist',
   	inline:true,
+    compress:true,//开启GZIP压缩
   	historyApiFallback:true,
     hot: true
   },
@@ -75,7 +76,7 @@ module.exports = {
         ]
       },
       {
-        test:/\.tpl$/,
+        test:/(\.tpl|\.html)$/,
         use:[
           {
             loader:"html-loader"
